@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-mode="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Vidya Mandir — Your complete Class 10 CBSE learning companion. Mathematics, Science, Social Science, English.">
+<title>Vidya Mandir — Class 10 Learning</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="hero-page">
+  <!-- 3D floating blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div style="position:relative;z-index:1;width:100%;max-width:720px;margin:0 auto">
+    <div class="hero-badge au">✦ &nbsp; Class 10 · CBSE · NCERT &nbsp; ✦</div>
+
+    <h1 class="hero-title au-1">
+      Learn Smarter,<br>
+      <span class="grad">Score Higher.</span>
+    </h1>
+
+    <p class="hero-sub au-2">
+      Video lessons, structured notes, NCERT important topics, quizzes
+      and a smart study planner — all four subjects, one clean platform.
+    </p>
+
+    <div class="hero-btns au-3">
+      <a href="dashboard.html" class="btn btn-b btn-lg" id="heroStart">Start Learning →</a>
+      <a href="todo.html" class="btn btn-gh btn-lg">📋 Study Planner</a>
+    </div>
+
+    <div style="display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:44px" class="au-3">
+      <a href="subject.html?id=mathematics"    class="btn btn-gh btn-sm">📐 Mathematics</a>
+      <a href="subject.html?id=science"        class="btn btn-gh btn-sm">🔬 Science</a>
+      <a href="subject.html?id=social-science" class="btn btn-gh btn-sm">🌍 Social Science</a>
+      <a href="subject.html?id=english"        class="btn btn-gh btn-sm">📚 English</a>
+    </div>
+
+    <div class="feat-grid au-4">
+      <div class="feat-card"><div class="feat-ico">▶️</div><div class="feat-title">Video Lessons</div><div class="feat-desc">Curated per-chapter videos from Vedantu, BYJU'S, Khan Academy</div></div>
+      <div class="feat-card"><div class="feat-ico">⭐</div><div class="feat-title">NCERT Topics</div><div class="feat-desc">Board-focused important topics with marks weightage</div></div>
+      <div class="feat-card"><div class="feat-ico">📁</div><div class="feat-title">PDF Library</div><div class="feat-desc">NCERT books, notes, past papers — one tap away</div></div>
+      <div class="feat-card"><div class="feat-ico">🧠</div><div class="feat-title">Chapter Quizzes</div><div class="feat-desc">MCQ practice with instant feedback and score tracking</div></div>
+      <div class="feat-card"><div class="feat-ico">📋</div><div class="feat-title">Study Planner</div><div class="feat-desc">Tasks with priorities, due dates and marks weightage</div></div>
+      <div class="feat-card"><div class="feat-ico">🔖</div><div class="feat-title">Bookmarks</div><div class="feat-desc">Save any chapter to revisit it quickly</div></div>
+    </div>
+
+    <div style="margin-top:40px;font-size:.73rem;color:var(--ink-5);text-align:center">
+      Mathematics · Science · Social Science · English
+    </div>
+  </div>
+</main>
+
+<script src="js/app.js"></script>
+<script src="js/security.js"></script>
+<script src="js/theme_todo.js"></script>
+<script>
+App.applyMode();
+
+// Show onboarding if first visit, else go straight to dashboard on CTA click
+document.getElementById('heroStart').addEventListener('click', e => {
+  if (!App.hasProfile()) {
+    e.preventDefault();
+    App.showOnboarding(() => { location.href = 'dashboard.html'; });
+  }
+  // else: normal link navigation
+});
+
+// Dark/light toggle on hero — optional shortcut
+document.addEventListener('keydown', e => {
+  if (e.key === 'd' && e.altKey) App.toggleMode();
+});
+</script>
+<script src="js/music.js"></script>
+</body>
+</html>
